@@ -2,9 +2,11 @@
   "name": "graphql-umbraco",
   "version": "1.0.0",
   "description": "A simple GraphQL server for Umbraco",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "babel-node src/server.js"
+
   },
   "repository": {
     "type": "git",
