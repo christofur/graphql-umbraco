@@ -5,6 +5,8 @@ import {
     GraphQLBoolean,
     GraphQLList
 } from 'graphql';
+import Property from './property';
+import ChildNode from './childNode';
 
 const Node = new GraphQLObjectType({
     name: 'Node',

@@ -7,7 +7,7 @@ import {
     GraphQLNonNull,
     GraphQLBoolean
 } from 'graphql';
-import PropertyType from './propertyType'
+import PropertyType from './propertyType';
 
 const Property = new GraphQLObjectType({
     name: 'Property',
