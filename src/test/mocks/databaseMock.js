@@ -13,6 +13,16 @@ const databaseMock = {
             findAll : function(){
                 return [1,2,3];
             }
+        },
+        properties: {
+            findAll : function(){
+                return [1,2,3];
+            }
+        },
+        propertyTypes: {
+            findAll : function(){
+                return [1,2,3];
+            }
         }
     }
 };
