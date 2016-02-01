@@ -1,3 +1,5 @@
+import Sequelize from 'sequelize';
+
 const nodes = {
     nodeId: {
         type: Sequelize.INTEGER,

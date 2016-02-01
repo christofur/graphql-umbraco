@@ -1,3 +1,5 @@
+import Sequelize from 'sequelize';
+
 const propertyTypes = {
     id: {
         type: Sequelize.INTEGER,
