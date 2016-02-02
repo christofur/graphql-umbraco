@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-const nodes = {
+const node = {
     nodeId: {
         type: Sequelize.INTEGER,
             primaryKey: true
@@ -17,4 +17,4 @@ const nodes = {
     }
 };
 
-export default nodes;
+export default node;

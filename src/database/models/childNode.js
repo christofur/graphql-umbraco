@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-const childNodes =
+const childNode =
     {
         id: {
             type: Sequelize.INTEGER,
@@ -18,4 +18,4 @@ const childNodes =
     };
 
 
-export default childNodes;
+export default childNode;

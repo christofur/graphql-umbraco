@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-const properties = {
+const property = {
     id: {
         type: Sequelize.INTEGER
     },
@@ -28,4 +28,4 @@ const properties = {
     }
 };
 
-export default properties;
+export default property;
