@@ -1,10 +1,10 @@
 import Sequelize from 'sequelize';
 import _ from 'lodash';
-import Config from './config/config';
-import Properties from 'models/property';
-import PropertyTypes from 'models/propertyType';
-import Nodes from 'models/node';
-import ChildNodes from 'models/childNode';
+import Config from '../config/config';
+import Properties from './models/property';
+import PropertyTypes from './models/propertyType';
+import Nodes from './models/node';
+import ChildNodes from './models/childNode';
 import Constants from '../constants/constants'
 
 const Conn = new Sequelize(
