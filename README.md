@@ -37,11 +37,11 @@ By default, graphql-umbraco comes bundled with the [GraphiQL](https://github.com
 
 You can now run basic GraphQL queries against Umbraco. Here's how to query a **node by id**
 
-<img src="http://i.imgur.com/no4fYYo.png" alt="Run a query" style="width: 400px;"/>
+<img src="http://i.imgur.com/no4fYYol.png" alt="Run a query"/>
 
 gives the result:
 
-<img src="http://i.imgur.com/k0niQRp.png" alt="Query result" style="width: 400px;"/>
+<img src="http://i.imgur.com/k0niQRpl.png" alt="Query result"/>
 
 
 Goals
