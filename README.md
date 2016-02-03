@@ -47,14 +47,14 @@ gives the result:
 Goals
 -------------
 
-Query nodes by URL
-Cache nodes and properties
-Replace the wonky current test mocks with proper [Sinon.js mocks](http://www.sinonjs.org/)
-Recursive, get children to *n* depth
-Get ancestors
-Automatically resolve media URLs by Id
-Sample [React](https://facebook.github.io/react/) application using [Relay](https://facebook.github.io/relay/) architecture
-Remove dependency on babel-cli for npm tasks
+* Query nodes by URL
+* Cache nodes and properties
+* Replace the wonky current test mocks with proper [Sinon.js mocks](http://www.sinonjs.org/)
+* Recursive, get children to *n* depth
+* Get ancestors
+* Automatically resolve media URLs by Id
+* Sample [React](https://facebook.github.io/react/) application using [Relay](https://facebook.github.io/relay/) architecture
+* Remove dependency on babel-cli for npm tasks
 
 > **Note:**
 
