@@ -4,7 +4,7 @@
   "description": "A simple GraphQL server for Umbraco",
   "main": "src/server.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha --compilers js:babel-core/register --require babel-polyfill src/test",
     "start": "babel-node src/server.js"
   },
   "repository": {
@@ -37,6 +37,10 @@
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",
+    "babel-core": "^6.4.5",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-runtime": "^6.3.19",
     "chai": "^3.5.0",
     "eslint-plugin-babel": "^3.0.0",
     "mocha": "^2.4.5",
