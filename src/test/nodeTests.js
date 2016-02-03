@@ -63,7 +63,6 @@ describe('Server can fetch node data', () => {
         const query = "{node(nodeId:1){newest}}";
         const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
         expect(nodeStub.calledOnce).to.equal(true);
-
         expect(response.body.data.node[0].newest).to.be.true;
 
     });
@@ -99,7 +98,6 @@ describe('Server can fetch node data', () => {
 
         const query = "{node(nodeId:1){magicUnicorns}}";
         const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
-
         expect(response.body.data).to.be.undefined;
 
     });
