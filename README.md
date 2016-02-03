@@ -44,6 +44,11 @@ gives the result:
 <img src="http://i.imgur.com/k0niQRp.png" alt="Query result" width="377" height="459"/>
 
 
+Tests
+-------------
+
+`npm test`
+
 Goals
 -------------
 
