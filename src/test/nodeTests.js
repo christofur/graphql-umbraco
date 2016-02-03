@@ -47,6 +47,16 @@ describe('Server can fetch node data', () => {
 
     });
 
+
+    it('fails if we request a nonexistent property of a node', async () => {
+
+        const query = "{node(nodeId:1){magicUnicorns}}";
+        const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
+
+        expect(response.body.data).to.be.undefined;
+
+    });
+
     afterEach(() => {
         nodeStub.restore();
     });
