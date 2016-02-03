@@ -68,6 +68,32 @@ describe('Server can fetch node data', () => {
 
     });
 
+    it('can retrieve the children of a node', async () => {
+
+        const query = "{node(nodeId:1){children{id}}}";
+        const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
+        expect(nodeStub.calledOnce).to.equal(true);
+        expect(response.body.data.node[0].children.length).to.be.at.least(1);
+
+    });
+
+    it('can retrieve the text property of the child of a node', async () => {
+
+        const query = "{node(nodeId:1){children{id}}}";
+        const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
+        expect(nodeStub.calledOnce).to.equal(true);
+        expect(response.body.data.node[0].children[0].text).to.equal('Fruits of the world');
+
+    });
+
+    it('does not get the children of a node by default', async () => {
+
+        const query = "{node(nodeId:1){text}}";
+        const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
+        expect(nodeStub.calledOnce).to.equal(true);
+        expect(response.body.data.node[0].children).to.be.undefined;
+
+    });
 
     it('fails if we request a nonexistent property of a node', async () => {
 
