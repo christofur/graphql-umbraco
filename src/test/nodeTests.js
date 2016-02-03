@@ -14,7 +14,7 @@ describe('Server can fetch node data', () => {
 
     let app, nodeStub = null;
 
-    before(function () {
+    before(() => {
 
         app = Express();
 
@@ -23,9 +23,10 @@ describe('Server can fetch node data', () => {
             pretty: false,
             graphiql: false
         }));
+    });
 
+    beforeEach(() => {
         nodeStub = sinon.stub(Db.models.nodes, "findAll").returns(nodes);
-
     });
 
     it('can retrieve the text property of a node', async () => {
@@ -35,6 +36,19 @@ describe('Server can fetch node data', () => {
         expect(nodeStub.calledOnce).to.equal(true);
         expect(response.body.data.node[0].text).to.equal('Fruits of the world');
 
+    });
+
+    it('can retrieve the id property of a node', async () => {
+
+        const query = "{node(nodeId:1){nodeId}}";
+        const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
+        expect(nodeStub.calledOnce).to.equal(true);
+        expect(response.body.data.node[0].nodeId).to.be.within(1,5);
+
+    });
+
+    afterEach(() => {
+        nodeStub.restore();
     });
 
 });
