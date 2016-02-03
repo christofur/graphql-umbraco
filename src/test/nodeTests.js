@@ -10,7 +10,7 @@ import sinon from 'sinon';
 import _ from 'lodash';
 import { nodes } from './data/testData';
 
-describe('Schema can process basic query', () => {
+describe('Server can fetch node data', () => {
 
     let app, nodeStub = null;
 

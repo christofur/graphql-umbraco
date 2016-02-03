@@ -50,9 +50,18 @@ const ChildNode = Conn.define('childNode', ChildNodes,
     }
 );
 
-Node.hasMany(Property, {as: 'properties', foreignKey: Constants.DB_KEYS_CONTENTNODEID});
-Property.belongsTo(PropertyType, {as: 'propertyType', targetKey: 'id', foreignKey: Constants.DB_KEYS_PROPERTYTYPEID});
-Node.hasMany(ChildNode, {as: 'childNodes', foreignKey: Constants.DB_KEYS_PARENTID});
-Conn.sync();
+Conn.initialise = function(){
+    try {
+        Node.hasMany(Property, {as: 'properties', foreignKey: Constants.DB_KEYS_CONTENTNODEID});
+        Property.belongsTo(PropertyType, {
+            as: 'propertyType',
+            targetKey: 'id',
+            foreignKey: Constants.DB_KEYS_PROPERTYTYPEID
+        });
+        Node.hasMany(ChildNode, {as: 'childNodes', foreignKey: Constants.DB_KEYS_PARENTID});
+        Conn.sync();
+    } catch (e) {
+    }
+};
 
 export default Conn;

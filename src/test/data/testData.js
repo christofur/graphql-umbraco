@@ -1,4 +1,6 @@
-const nodes = (function(){
+import _ from 'lodash';
+
+export const nodes = (function(){
     let data = [];
     let i = 0;
     _.times(5, () => {
@@ -10,14 +12,14 @@ const nodes = (function(){
             getProperties: function(){
                 return {
                     then: function(){
-                        return databaseMock.models.properties.findAll();
+                        return properties;
                     }
                 }
             },
             getChildNodes: function(){
                 return {
                     then: function(){
-                        return databaseMock.models.nodes.findAll();
+                        return nodes;
                     }
                 }
             }
@@ -26,6 +28,31 @@ const nodes = (function(){
     return data;
 })();
 
-export default nodes;
 
+export const properties = (function(){
 
+    let data = [];
+    _.times(5, () => {
+
+        data.push({
+            value: function(){
+                return {
+                    dataNtext: 'Apple'
+                }
+            },
+            key: 'Type of fruit',
+            getPropertyType: function(){
+                return {
+                    then: function(){
+                        return 'Picker';
+                    }
+                }
+            }
+        });
+    });
+    return data;
+})();
+
+export const propertyTypes = (function(){
+    return [];
+})();
