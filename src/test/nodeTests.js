@@ -23,6 +23,7 @@ describe('Server can fetch node data', () => {
             pretty: false,
             graphiql: false
         }));
+
     });
 
     beforeEach(() => {
@@ -47,6 +48,26 @@ describe('Server can fetch node data', () => {
 
     });
 
+    it('can retrieve the versionId property of a node', async () => {
+
+        const query = "{node(nodeId:1){versionId}}";
+        const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
+        expect(nodeStub.calledOnce).to.equal(true);
+        expect(response.body.data.node[0].versionId).to.be.at.least(1);
+
+    });
+
+
+    it('can retrieve the newest property of a node', async () => {
+
+        const query = "{node(nodeId:1){newest}}";
+        const response = await request(app).get(Config.ServerConfig.startUrl + '?query=' + query);
+        expect(nodeStub.calledOnce).to.equal(true);
+
+        expect(response.body.data.node[0].newest).to.be.true;
+
+    });
+
 
     it('fails if we request a nonexistent property of a node', async () => {
 
@@ -58,7 +79,9 @@ describe('Server can fetch node data', () => {
     });
 
     afterEach(() => {
+
         nodeStub.restore();
+
     });
 
 });
